@@ -16,11 +16,11 @@ export const ListItem = ({ icon, children }: ListItemProps) => {
 
   return (
     <Flex 
-      width={["120px","158px"]}
-      height={["120px","158px"]}
+      width={["50%","50%","158px"]}
+      height={["40px","40px","158px"]}
       direction={["row","column"]}
       align="center"
-      justify="center"
+      justify="flex-start"
     >
       {
         isWideVersion ?
@@ -28,10 +28,16 @@ export const ListItem = ({ icon, children }: ListItemProps) => {
           width="85px"
           height="85px"
           src={icon}
-          alt="logo"
+          alt="icon"
           mb="1rem"
         /> :
-        <Text fontSize={"30px"} color="yellow.500">.</Text>
+        <Image
+          width="8px"
+          height="8px"
+          src='icons/dot.svg'
+          alt="icon"
+          mr="0.25rem"
+        />
       }
       <Text
         fontWeight="600"
