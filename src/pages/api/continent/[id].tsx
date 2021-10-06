@@ -13,6 +13,7 @@ type Data = {
     total_of_countries: number,
     total_of_languages: number,
     cities_over_hundred: number,
+    img: string,
     cities: {
       name: string,
       country: string,

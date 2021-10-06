@@ -4,6 +4,7 @@ export const asia = {
   total_of_countries: 50,
   total_of_languages: 2301,
   cities_over_hundred: 32,
+  img: 'https://images.unsplash.com/photo-1493780474015-ba834fd0ce2f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1442&q=80',
   cities: [
     {
       name: 'Tóquio',

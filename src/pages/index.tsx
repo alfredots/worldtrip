@@ -1,10 +1,12 @@
 import { GetStaticProps } from 'next';
+import Link from 'next/link';
 import { Image, Divider, Flex, Box, Text, useBreakpointValue } from '@chakra-ui/react'
 import { Banner } from './../components/Banner';
 import { ListItem } from './../components/ListItem';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation } from 'swiper';
 import axios from 'axios'
+import { Header } from '../components/Header';
 
 type Continent = {
   id: string,
@@ -36,18 +38,7 @@ export default function Home({ continents }: HomeProps) {
       h="100vh"
       margin="0 auto"
     >
-      <Flex
-        width="100%"
-        align="center"
-        justify="center"
-        padding="1rem 0"
-      >
-        <Image
-          width={isWideVersion? '11.25rem': '5rem'}
-          src="logo.svg"
-          alt="logo"
-        />
-      </Flex>
+      <Header />
 
       <Banner isDesktop={isWideVersion} />
 
@@ -125,13 +116,16 @@ export default function Home({ continents }: HomeProps) {
                     bgColor="blackAlpha.600"
                     zIndex="1"
                   />
-                  <Text
-                    color="blue.100"
-                    fontSize={["24px","48px"]}
-                    zIndex="10"
-                  >
-                    {continent.name}
-                  </Text>
+                  <Link href={`post/${continent.id}`} passHref>
+                    <Text
+                      color="blue.100"
+                      fontSize={["24px","48px"]}
+                      zIndex="10"
+                      cursor="pointer"
+                    >
+                      {continent.name}
+                    </Text>
+                  </Link>
                   <Text
                     color="blue.100"
                     fontSize={["14px","24px"]}

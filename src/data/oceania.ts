@@ -4,6 +4,7 @@ export const oceania = {
   total_of_countries: 14,
   total_of_languages: 18,
   cities_over_hundred: 6,
+  img: 'https://images.unsplash.com/photo-1589330273594-fade1ee91647?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80',
   cities: [
     {
       name: 'Melbourne',

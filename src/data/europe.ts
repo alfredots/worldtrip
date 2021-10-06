@@ -4,6 +4,7 @@ export const europe = {
   total_of_countries: 50,
   total_of_languages: 60,
   cities_over_hundred: 27,
+  img: 'https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1504&q=80',
   cities: [
     {
       name: 'Londres',

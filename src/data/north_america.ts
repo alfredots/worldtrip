@@ -4,6 +4,7 @@ export const north_america = {
   total_of_countries: 3,
   total_of_languages: 2,
   cities_over_hundred: 27,
+  img: 'https://images.unsplash.com/photo-1589871090211-7f2efeec05b6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80',
   cities: [
     {
       name: 'Cidade do México',
