@@ -19,7 +19,7 @@ interface HomeProps {
   continents: Continent[]
 }
 
-interface ContinentResponse {
+interface ContinentsResponse {
   data: Continent[]
 }
 
@@ -148,7 +148,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = async() => {
 
   const URL_TO_FETCH = 'http://localhost:3000/api/continents'; 
 
-  const response = await axios.get<ContinentResponse>(URL_TO_FETCH)
+  const response = await axios.get<ContinentsResponse>(URL_TO_FETCH)
 
   return {
     props: {

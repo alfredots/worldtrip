@@ -212,7 +212,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 
 export const getStaticProps: GetStaticProps<PostProps> = async({ params }) => {
-  const { slug } = params
+  const slug = params?.slug
   const URL_TO_FETCH = `http://localhost:3000/api/continent/${slug}`; 
 
   const response = await axios.get<ContinentResponse>(URL_TO_FETCH)
