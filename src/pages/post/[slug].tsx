@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Image, Divider, Flex, Box, Text, useBreakpointValue } from '@chakra-ui/react'
 import axios from 'axios'
 import { Header } from '../../components/Header';
+import { Card } from '../../components/Card';
 
 type Continent = {
   name: string,
@@ -14,6 +15,7 @@ type Continent = {
   cities: {
     name: string,
     country: string,
+    flag:string,
     img: string
   } []
 }
@@ -43,11 +45,14 @@ export default function Post({ continent }: PostProps) {
     >
       <Header backButton />
 
-      <Box
+      <Flex
         width="100%"
-        height="500px"
+        height={["150px","500px"]}
         bgImage={continent.img}
+        bgPosition="center"
         position="relative"
+        align="center"
+        justify="center"
       >
         <Box
           position="absolute"
@@ -63,44 +68,48 @@ export default function Post({ continent }: PostProps) {
           fontSize={["24px","48px"]}
           position="absolute"
           zIndex="10"
-          left="140px"
-          bottom="59px"
+          left={["","140px"]}
+          bottom={["","59px"]}
           cursor="pointer"
         >
           {continent.name}
         </Text>
-      </Box>
+      </Flex>
 
       <Flex
-        width="1160px"
+        width="100%"
+        maxWidth={["100%", "1160px"]}
+        direction={["column", "row"]}
       >
         <Box
           width="100%"
         >
           <Text
-            maxWidth="600px"
-            fontSize="24px"
+            maxWidth={["100%","600px"]}
+            fontSize={["14px","24px"]}
             pt="80px"
+            px={["1rem",""]}
           >
             {continent.description}
           </Text>
         </Box>
         <Flex
-          mt="136px"
-          ml="70px"
-          gridGap="2rem"
+          mt={["1rem","136px"]}
+          ml={["", "70px"]}
+          px="1rem"
+          gridGap={["1rem", "2rem"]}
         >
           <Box
             textAlign="center"
           >
             <Text
-              fontSize="48px"
+              fontSize={["24px","48px"]}
               color="yellow.200"
             >
               {continent.total_of_countries}
             </Text>
             <Text
-              fontSize="24px"
+              fontSize={["18px","24px"]}
               fontWeight="600"
             >
               países
@@ -110,13 +119,13 @@ export default function Post({ continent }: PostProps) {
             textAlign="center"
           >
             <Text
-              fontSize="48px"
+              fontSize={["24px","48px"]}
               color="yellow.200"
             >
               {continent.total_of_languages}
             </Text>
             <Text
-              fontSize="24px"
+              fontSize={["18px","24px"]}
               fontWeight="600"
             >
               línguas
@@ -126,13 +135,13 @@ export default function Post({ continent }: PostProps) {
             textAlign="center"
           >
             <Text
-              fontSize="48px"
+              fontSize={["24px","48px"]}
               color="yellow.200"
             >
               {continent.cities_over_hundred}
             </Text>
             <Text
-              fontSize="24px"
+              fontSize={["18px","24px"]}
               fontWeight="600"
             >
               cidades+100
@@ -142,13 +151,15 @@ export default function Post({ continent }: PostProps) {
       </Flex>
 
       <Flex
-        width="1160px"
+        width="100%"
+        maxWidth={["100%", "1160px"]}
         direction="column"
         align="center"
-        mt="80px"
+        mt={["40px", "80px"]}
+        px="1rem"
       >
         <Text
-          fontSize="36px"
+          fontSize={["24px","36px"]}
           fontWeight="500"
           alignSelf="flex-start"
         >
@@ -159,44 +170,20 @@ export default function Post({ continent }: PostProps) {
           width="100%"
           mt="40px"
           mb="40px"
-          justify="space-between"
+          direction={["column", "row"]}
+          gridGap={["1rem",""]}
+          align={["center"]}
+          justify={["center","space-between"]}
         >
           {
             continent.cities.map(city => (
-              <Box
+              <Card
                 key={city.name}
-                width="256px"
-                height="279px"
-                borderRadius="4px"
-                bgColor="white"
-              >
-                <Image 
-                  width="256px"
-                  height="173px"
-                  borderRadius="4px 4px 0px 0px"
-                  src={city.img}
-                  alt={city.name}
-                />
-                <Text
-                  fontSize="20px"
-                  fontFamily="Barlow"
-                  fontWeight="600"
-                  pt="18px"
-                  pl="24px"
-                >
-                  {city.name}
-                </Text>
-                <Text
-                  fontSize="16px"
-                  fontFamily="Barlow"
-                  fontWeight="600"
-                  color="gray.400"
-                  pt="12px"
-                  pl="24px"
-                >
-                  {city.country}
-                </Text>
-              </Box>
+                name={city.name}
+                country={city.country}
+                flag={city.flag}
+                img={city.img}
+              />
             ))
           }
         </Flex>

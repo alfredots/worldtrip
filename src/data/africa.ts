@@ -9,16 +9,19 @@ export const africa = {
     {
       name: 'Cidade do Cabo',
       country: 'África do Sul',
+      flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Flag_of_South_Africa.svg/400px-Flag_of_South_Africa.svg.png',
       img: 'https://images.unsplash.com/photo-1576485290814-1c72aa4bbb8e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80'
     },
     {
       name: 'Joanesburgo',
       country: 'África do Sul',
+      flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Flag_of_South_Africa.svg/400px-Flag_of_South_Africa.svg.png',
       img: 'https://images.unsplash.com/photo-1552937075-967cf58b74a4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
     },
     {
       name: 'Pretória',
       country: 'África do Sul',
+      flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Flag_of_South_Africa.svg/400px-Flag_of_South_Africa.svg.png',
       img: 'https://images.unsplash.com/photo-1590397678631-f33501fe78a8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1428&q=80'
     }
   ]

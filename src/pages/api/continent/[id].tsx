@@ -17,6 +17,7 @@ type Data = {
     cities: {
       name: string,
       country: string,
+      flag: string,
       img: string
     }[]
   }

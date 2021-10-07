@@ -31,7 +31,7 @@ export const Header = ({
             src="/back-button.svg"
             alt="voltar"
             position="absolute"
-            left="130px"
+            left={["30px","130px"]}
             cursor="pointer"
           />
         </Link>
