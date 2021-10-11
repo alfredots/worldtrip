@@ -1,12 +1,12 @@
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import { Image, Divider, Flex, Box, Text, useBreakpointValue } from '@chakra-ui/react'
+import { Divider, Flex, Box, Text, useBreakpointValue } from '@chakra-ui/react'
 import { Banner } from './../components/Banner';
 import { ListItem } from './../components/ListItem';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation } from 'swiper';
-import axios from 'axios'
 import { Header } from '../components/Header';
+import { home } from '../data'
 
 type Continent = {
   id: string,
@@ -17,10 +17,6 @@ type Continent = {
 
 interface HomeProps {
   continents: Continent[]
-}
-
-interface ContinentsResponse {
-  data: Continent[]
 }
 
 SwiperCore.use([Navigation]);
@@ -146,13 +142,9 @@ export default function Home({ continents }: HomeProps) {
 
 export const getStaticProps: GetStaticProps<HomeProps> = async() => {
 
-  const URL_TO_FETCH = 'http://localhost:3000/api/continents'; 
-
-  const response = await axios.get<ContinentsResponse>(URL_TO_FETCH)
-
   return {
     props: {
-      continents: response.data.data
+      continents: home
     }
   }
 }

@@ -1,16 +1,4 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
-
-type Data = {
-  data: {
-    id: string,
-    name: string,
-    description: string,
-    img: string
-  }[]
-}
-
-const data = [
+export const home = [
   {
     id: 'north_america',
     name: 'América do Norte',
@@ -48,10 +36,3 @@ const data = [
     img: 'https://images.unsplash.com/photo-1589330273594-fade1ee91647?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80'
   }
 ]
-
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  res.status(200).json({ data })
-}

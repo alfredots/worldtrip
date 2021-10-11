@@ -1,10 +1,8 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import Link from 'next/link';
-import { Image, Divider, Flex, Box, Text, useBreakpointValue } from '@chakra-ui/react'
-import axios from 'axios'
+import { Flex, Box, Text } from '@chakra-ui/react'
 import { Header } from '../../components/Header';
 import { Card } from '../../components/Card';
-
+import { africa, asia, europe, north_america, oceania, south_america } from '../../data'
 type Continent = {
   name: string,
   description: string,
@@ -21,19 +19,14 @@ type Continent = {
 }
 
 interface PostProps {
-  continent: Continent
+  continent: Continent | null
 }
-
-interface ContinentResponse {
-  data: Continent
-}
-
 
 export default function Post({ continent }: PostProps) {
-  const isWideVersion = useBreakpointValue({
-    base: false,
-    md: true,
-  })
+
+  if (continent === null) {
+    return <h1>Página não existentente</h1>
+  }
 
   return (
     <Flex
@@ -206,20 +199,42 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: true,
+    fallback: 'blocking',
   };
 };
 
 
-export const getStaticProps: GetStaticProps<PostProps> = async({ params }) => {
+export const getStaticProps: GetStaticProps<PostProps> = ({ params }) => {
   const slug = params?.slug
-  const URL_TO_FETCH = `http://localhost:3000/api/continent/${slug}`; 
+  let continent = null
 
-  const response = await axios.get<ContinentResponse>(URL_TO_FETCH)
+  switch (slug) {
+    case 'europe':
+      continent = europe
+      break;
+    case 'africa':
+      continent = africa
+      break;
+    case 'north_america':
+      continent = north_america
+      break;
+    case 'south_america':
+      continent = south_america
+      break;
+    case 'asia':
+      continent = asia
+      break;
+    case 'oceania':
+      continent = oceania
+      break;
+    default:
+      continent = null
+      break;
+  }
 
   return {
     props: {
-      continent: response.data.data
+      continent
     }
   }
 }
